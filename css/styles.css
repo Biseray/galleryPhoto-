@@ -1,0 +1,444 @@
+/* ------------------------------loader --------------------------------------------- */
+
+.loader {
+    overflow-y: visible;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    background-color: black;
+    inset: 0;
+    animation: loaderbackground 4s forwards;
+
+}
+
+
+
+.no-hover {
+    pointer-events: none;
+  }
+
+.color-txt-loader {
+    color: azure;
+    font-size: 30em;
+}
+
+.text-b {
+    animation: rightttext 2500ms forwards;
+
+
+}
+
+.text-a {
+    animation: lefttext 2500ms forwards;
+}
+
+.annimationImg {
+    animation: menu 2s forwards;
+    transform: scale(0.1);
+    animation-delay: 3.5s;
+
+}
+
+
+/* keyframe */
+@keyframes loaderbackground {
+    1% {
+
+        z-index: 999;
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    99% {
+
+        z-index: 999;
+
+    }
+
+    100% {
+        z-index: -999;
+        opacity: 0;
+
+    }
+
+
+
+}
+
+
+@keyframes menu {
+    0% {
+
+        transform: scale(0.1);
+    }
+
+
+
+    100% {
+        transform: scale(1);
+
+    }
+
+}
+
+/* animation a B loading  */
+/* keyframes  */
+
+@keyframes lefttext {
+    0% {
+        transform: translate(-2.2em);
+        opactiy: 0;
+    }
+
+    10% {
+        transform: translate(-2em);
+        opactiy: 0;
+    }
+
+    20% {
+        transform: scale(1.2);
+        opacity: 0.3;
+    }
+
+    50% {
+        transform: translate(0.5em);
+
+        opacity: 0.3;
+
+    }
+
+    90% {
+        transform: translate(0.09em);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(0.09em);
+        opacity: 1;
+    }
+}
+
+
+@keyframes rightttext {
+    0% {
+        transform: translate(2.2em);
+        opactiy: 0;
+    }
+
+    10% {
+        transform: translate(2em);
+        opactiy: 0;
+    }
+
+
+    20% {
+        transform: scale(1.2);
+        opacity: 0.3;
+    }
+
+
+    50% {
+        transform: translate(-0.5em);
+
+        opacity: 0.3;
+
+    }
+
+    90% {
+        transform: translate(-0.2em);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(-0.2em);
+        opacity: 1;
+    }
+}
+
+
+@keyframes animPopUp {
+    0%{
+        background-color: #0000003a;
+ 
+    
+    }
+    100%{
+       
+          background-color: #ffffffc9;
+    }
+}
+
+
+
+@keyframes imagePopUp {
+    0% {
+
+       transform-origin: 30% ;
+       transform: scale(0.3) rotate(30deg);
+    }
+
+
+20% {
+    transform: rotate(-30deg);
+    
+}
+    100% {
+        transform: scale(1) rotate(0deg);
+        transform-origin: 100% ;
+    }
+
+}
+/* ---------------------header --------------------------------------- */
+header {
+
+    margin: 0;
+    color: #DBDBDB;
+}
+
+h1 {
+    color: #313131;
+    transform: scale(1.3) rotate(180deg);
+    transition: all 700ms ease-out;
+
+}
+
+h1:hover {
+    color: #ffffff;
+    transform: scale(1.8)rotate(-0deg);
+
+
+
+}
+
+/* ------------------- main  --------------------------------------- */
+
+body {
+    background-color: rgb(0, 0, 0);
+    margin: 0;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+   
+}
+
+main {
+    width: 100%;
+    margin: auto;
+}
+
+.imageV {
+    width: 550px;
+    padding: 1em 0em 1em 0em;
+   
+    }
+
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+
+/* menu nav--------------------------------------START-------------  */
+
+nav {
+    display: flex;
+    justify-content: center;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+
+
+    gap: 2em;
+}
+
+/* menu  nav--------------------------------------END-------------- */
+/* ---------------------footer --------------------------------------- */
+footer {
+    background-color: #11111100;
+    margin: 0px;
+    color: #DBDBDB;
+    box-shadow: rgb(12, 12, 12) -0px 1px 2px;
+    display: flex;
+    justify-content: center;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+
+
+
+/* creation du pop up  */
+
+
+#popup-bg { 
+    margin: 0;
+    padding: 0;
+    display: none;
+    position:fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #313131a4;
+    z-index: 3;
+    align-items: center;
+    justify-content: center;
+    transition: all 1000ms;
+}
+
+
+#popup-bg.active{
+    display: flex;
+    transition: all 1000ms;
+    
+    
+}
+
+.popup-content{
+    height: 100%;
+    width: 90%;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.popup-close{
+    position: absolute;
+    top: 0 ;
+    right: 0;
+    color: #000000;
+    transform: translate(-600%, 40%);
+    font-size: 1.6em;
+} 
+
+
+#popup-img {
+   width: auto; 
+   height:90%;
+   
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* version mobile  */
+
+/* ----------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------
+   */
+/* version mobile  */
+@media screen and (max-width: 767px) {
+    nav {
+        width: 100%;
+        margin: 0;
+        text-align: center;
+        margin: 0 -2px 0 -2px;
+    }
+
+    main {
+        width: 100%;
+        margin: 0;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .imageV {
+        width: 340px;
+        padding: 0.3em 0.3em 0.3em 0.3em;
+       
+       
+    }
+
+  
+.popup-close{
+    position: absolute;
+    top: 0 ;
+    right: 0;
+    color: #000000;
+    transform: translate(-140%, -150%);
+    font-size: 1.6em;
+}
+
+
+    /* -------------------- footer -------------------- */
+    footer {
+        width: 100%;
+        margin: 0;
+        text-align: center;
+
+    }
+
+    .text-a,
+    .text-b {
+        font-size: 6em;
+    }
+
+
+.cards {
+    transition: all 800ms;
+}
+
+.cards:hover {
+    transform: scale(1.1);
+
+    background-size: 100%;
+    z-index: 1000;
+
+}
+
+
+#popup-img {
+    height: auto;
+    width: 80%;
+    
+}
+}
