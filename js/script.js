@@ -40,7 +40,7 @@ const affichageImage = () => {
       `<div class="cards2" > 
       <div class="cards" >
       
-        <img class="imageV annimationImg" src="./img/${img}" id="12" alt="image">
+        <img class="imageV annimationImg" src="./img/${img}"  alt="image">
         
       </div>
     </div>`;
@@ -50,8 +50,6 @@ const affichageImage = () => {
 
 
   const imgGalerySecond = [
-
-
     "biseray16.jpg",
     "biseray17.jpg",
     "biseray18.jpg",
@@ -69,13 +67,18 @@ const affichageImage = () => {
 
   imgGalerySecond.forEach(img => {
     divImgColor +=
-      ` <div class="cards">
-    
-    <img class="imageV annimationImg" id="imageV" src="./img/${img}" alt="image">
-</div>` });
- 
+      ` 
+      <div class="cards2" > 
+      <div class="cards" >
+      
+        <img class="imageV annimationImg" id="imageV" src="./img/${img}" alt="image">
+        
+      </div>
+    </div>`
+  });
 
-contenairecolor.innerHTML = divImgColor;
+
+  contenairecolor.innerHTML = divImgColor;
   const clickImage = document.querySelectorAll('.cards img');
   let popupBG = document.getElementById('popup-bg');
   let popupImg = document.getElementById('popup-img');;
